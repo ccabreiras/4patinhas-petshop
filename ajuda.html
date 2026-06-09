@@ -3,103 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4 Patinhas Petshop: ajuda</title>
+  <title>Ajuda — 4 Patinhas Petshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>4 Patinhas Petshop</h1>
-    <p>Cuidando do seu pet com amor, desde 2024</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="caes.html">Cães</a></li>
-        <li><a href="gatos.html">Gatos</a></li>
-        <li><a href="peixes.html">Peixes</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="ajuda.html" aria-current="page">Ajuda</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>🐾 4 Patinhas Petshop</h1>
+      <p>Cuidando do seu pet com amor, desde 2024</p>
+      <p id="relogio" aria-live="polite" aria-label="Data e hora atuais"></p>
+    </div>
   </header>
 
-  <!-- MAIN -->
-  <main>
-    <h2>Ajuda: como usar o site do 4 Patinhas Petshop</h2>
+  <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu"
+              aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="caes.html">Cães</a></li>
+          <li class="nav-item"><a class="nav-link" href="gatos.html">Gatos</a></li>
+          <li class="nav-item"><a class="nav-link" href="peixes.html">Peixes</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ajuda.html" aria-current="page">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <section>
+  <main id="conteudo-principal" class="container my-4">
+
+    <h2 class="mb-4">Ajuda e Documentação</h2>
+
+    <!-- Sobre o sistema -->
+    <section class="mb-4">
       <h3>Sobre o sistema</h3>
       <p>
-        Este site foi criado com muito carinho como projeto acadêmico da disciplina
-        de Análise e Desenvolvimento de Sistemas na PUC, Fase 1. Aqui você encontra os produtos e
-        serviços do petshop de forma organizada e fácil de navegar.
+        O <strong>4 Patinhas Petshop</strong> é um projeto acadêmico desenvolvido
+        para a disciplina de Fundamentos de Sistemas Web do curso de Análise e
+        Desenvolvimento de Sistemas da PUC.
+      </p>
+      <p>
+        Na <strong>Fase 1</strong>, o site foi estruturado em HTML5 semântico.
+        Na <strong>Fase 2</strong>, foram adicionados CSS personalizado,
+        Bootstrap 5, JavaScript e formulários interativos para cadastro e agendamento.
       </p>
     </section>
 
-    <section>
+    <!-- Navegação -->
+    <section class="mb-4">
       <h3>Navegação</h3>
-      <p>O site tem seis páginas, todas acessíveis pelo menu no topo e no rodapé:</p>
+      <p>o site possui oito páginas:</p>
       <ul>
-        <li><strong>Home (index.html):</strong> página inicial com boas-vindas e visão geral do petshop;</li>
-        <li><strong>Cães (caes.html):</strong> exibe 2 produtos da categoria Cães com foto, descrição e valor;</li>
-        <li><strong>Gatos (gatos.html):</strong> exibe 2 produtos da categoria Gatos com foto, descrição e valor;</li>
-        <li><strong>Peixes (peixes.html):</strong> exibe 2 produtos da categoria Peixes com foto, descrição e valor;</li>
-        <li><strong>Serviços (servicos.html):</strong> lista os serviços disponíveis, valores e informação sobre tele-busca;</li>
-        <li><strong>Ajuda (ajuda.html):</strong> esta página é a sua central de ajuda sobre o site.</li>
+        <li><a href="index.html">Home (index.html)</a> — página inicial com carrossel e visão geral das categorias;</li>
+        <li><a href="caes.html">Cães (caes.html)</a> — produtos para cães;</li>
+        <li><a href="gatos.html">Gatos (gatos.html)</a> — produtos para gatos;</li>
+        <li><a href="peixes.html">Peixes (peixes.html)</a> — produtos para peixes;</li>
+        <li><a href="servicos.html">Serviços (servicos.html)</a> — serviços oferecidos pelo petshop;</li>
+        <li><a href="cadastro.html">Cadastro (cadastro.html)</a> — formulário de cadastro de tutor e pet;</li>
+        <li><a href="agendamento.html">Agendamento (agendamento.html)</a> — formulário de agendamento de serviço;</li>
+        <li><a href="ajuda.html">Ajuda (ajuda.html)</a> — esta página de documentação.</li>
       </ul>
     </section>
 
-    <section>
-      <h3>Funcionalidades disponíveis nesta fase (Fase 1)</h3>
+    <!-- Funcionalidades da Fase 2 -->
+    <section class="mb-4">
+      <h3>Funcionalidades implementadas na Fase 2</h3>
+
+      <h4>CSS e Bootstrap</h4>
+      <p>
+        o site utiliza Bootstrap 5 para layout responsivo com navbar colapsável,
+        carrossel de imagens na página inicial, cards para produtos e serviços,
+        e formulários com validação visual. os estilos personalizados estão em
+        <code>css/style.css</code> e utilizam variáveis CSS para as cores da marca.
+      </p>
+
+      <h4>JavaScript</h4>
+      <p>o arquivo <code>js/main.js</code> implementa as seguintes funções:</p>
       <ul>
-        <li>Ver produtos por categoria, com foto, descrição e valor;</li>
-        <li>Consultar os serviços disponíveis, com valores e informação de tele-busca;</li>
-        <li>Navegar entre as páginas pelo menu no topo e no rodapé;</li>
-        <li>Encontrar informações de contato no rodapé de todas as páginas.</li>
+        <li><strong>relógio em tempo real</strong>: exibe data e hora no cabeçalho usando <code>setInterval</code> com atualização a cada segundo (função temporal);</li>
+        <li><strong>data mínima</strong>: define automaticamente a data de hoje como limite mínimo no campo de data do agendamento;</li>
+        <li><strong>tele-busca condicional</strong>: exibe ou oculta o campo de endereço conforme o método de entrega selecionado;</li>
+        <li><strong>feedback de formulário</strong>: intercepta o envio, valida os campos e exibe mensagem de confirmação.</li>
+      </ul>
+
+      <h4>Formulário de cadastro</h4>
+      <p>
+        a página <a href="cadastro.html">cadastro.html</a> permite registrar o tutor
+        (nome, CPF, data de nascimento, sexo via radio button, endereço, telefone e e-mail)
+        e o pet (nome, espécie via select, raça, idade via number, porte via radio button
+        e observações via textarea). campos obrigatórios utilizam o atributo
+        <code>required</code> e validação visual Bootstrap.
+      </p>
+
+      <h4>Formulário de agendamento</h4>
+      <p>
+        a página <a href="agendamento.html">agendamento.html</a> permite agendar
+        serviços de banho e/ou tosa. o tutor informa o serviço desejado (Banho, Tosa
+        ou Banho e Tosa), o método de entrega (tele-busca ou presencial), a data e
+        o horário. caso tele-busca seja selecionada, um campo de endereço é exibido
+        automaticamente pelo JavaScript.
+      </p>
+
+      <h4>Acessibilidade</h4>
+      <p>o site implementa os seguintes recursos de acessibilidade:</p>
+      <ul>
+        <li><code>lang="pt-BR"</code> em todas as páginas para leitores de tela;</li>
+        <li>atributos <code>alt</code> descritivos em todas as imagens;</li>
+        <li>skip link ("Pular para o conteúdo principal") para usuários de teclado e leitores de tela;</li>
+        <li><code>aria-label</code> na navegação, no carrossel e no relógio;</li>
+        <li><code>aria-current="page"</code> no link ativo da navegação em cada página;</li>
+        <li><code>aria-live="polite"</code> no relógio para anunciar atualizações aos leitores de tela;</li>
+        <li>labels associados a todos os campos de formulário via atributos <code>for</code> e <code>id</code>.</li>
       </ul>
     </section>
 
-    <section>
-      <h3>Funcionalidades previstas para a Fase 2</h3>
-      <ul>
-        <li>Estilização visual com CSS;</li>
-        <li>Interatividade com JavaScript (formulários, filtros, etc.).</li>
-      </ul>
-    </section>
-
-    <section>
+    <!-- Informações técnicas -->
+    <section class="mb-4">
       <h3>Informações técnicas</h3>
-      <ul>
-        <li><strong>Tecnologia:</strong> HTML5 puro;</li>
-        <li><strong>Hospedagem:</strong> GitHub Pages;</li>
-        <li><strong>Repositório:</strong> GitHub;</li>
-        <li><strong>Desenvolvido por:</strong> Cíntia Cabreira;</li>
-        <li><strong>Curso:</strong> análise e Desenvolvimento de Sistemas na PUC;</li>
-        <li><strong>Fase do projeto:</strong> fase 1.</li>
-      </ul>
+      <dl class="row">
+        <dt class="col-sm-4">Tecnologias</dt>
+        <dd class="col-sm-8">HTML5, CSS3, Bootstrap 5.3, JavaScript ES6</dd>
+        <dt class="col-sm-4">Fase atual</dt>
+        <dd class="col-sm-8">Fase 2 — CSS, Bootstrap e JavaScript</dd>
+        <dt class="col-sm-4">Disciplina</dt>
+        <dd class="col-sm-8">Fundamentos de Sistemas Web — ADS PUC</dd>
+        <dt class="col-sm-4">Autora</dt>
+        <dd class="col-sm-8">Cíntia Cabreira</dd>
+      </dl>
     </section>
 
-    <p><a href="index.html">← Voltar para Home</a></p>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2024 4 Patinhas Petshop. Todos os direitos reservados.</p>
-    <p>Desenvolvido por Cíntia Cabreira, estudante de Análise e Desenvolvimento de Sistemas na PUC.</p>
-    <address>
-      contato@4patinhas.com.br | Tel: (11) 99999-0000 | Rua dos Animais, 42, São Paulo, SP
-    </address>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="caes.html">Cães</a></li>
-        <li><a href="gatos.html">Gatos</a></li>
-        <li><a href="peixes.html">Peixes</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="ajuda.html">Ajuda</a></li>
-      </ul>
-    </nav>
+  <footer class="site-footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <address>
+            <strong>4 Patinhas Petshop</strong><br>
+            Rua dos Animais, 42, São Paulo — SP<br>
+            Tel: (11) 99999-0000<br>
+            E-mail: <a href="mailto:contato@4patinhas.com.br">contato@4patinhas.com.br</a>
+          </address>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p>Desenvolvido por Cíntia Cabreira</p>
+          <p>análise e Desenvolvimento de Sistemas na PUC</p>
+          <p class="mb-0">© 2024 4 Patinhas Petshop. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>

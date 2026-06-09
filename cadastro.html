@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro — 4 Patinhas Petshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>🐾 4 Patinhas Petshop</h1>
+      <p>Cuidando do seu pet com amor, desde 2024</p>
+      <p id="relogio" aria-live="polite" aria-label="Data e hora atuais"></p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu"
+              aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="caes.html">Cães</a></li>
+          <li class="nav-item"><a class="nav-link" href="gatos.html">Gatos</a></li>
+          <li class="nav-item"><a class="nav-link" href="peixes.html">Peixes</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link active" href="cadastro.html" aria-current="page">Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo-principal" class="container my-4">
+
+    <h2 class="mb-2">Cadastro de Tutor e Pet</h2>
+    <p class="mb-4">
+      Preencha os dados abaixo para cadastrar você e seu pet no sistema.
+      Campos marcados com <span class="text-danger">*</span> são obrigatórios.
+    </p>
+
+    <!-- Formulário de cadastro com validação Bootstrap (novalidate = controle manual via JS) -->
+    <form id="formCadastro" novalidate>
+
+      <!-- ======================================================
+           SEÇÃO 1: DADOS DO TUTOR
+           ====================================================== -->
+      <div class="form-section">
+        <h2>Dados do Tutor</h2>
+
+        <div class="row g-3">
+
+          <!-- Nome completo (text, required) -->
+          <div class="col-md-8">
+            <label for="nomeTutor" class="form-label">
+              Nome completo <span class="obrigatorio text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="nomeTutor"
+                   name="nomeTutor" placeholder="Digite seu nome completo"
+                   required autocomplete="name">
+            <div class="invalid-feedback">por favor, informe seu nome completo.</div>
+          </div>
+
+          <!-- CPF (text com pattern, placeholder) -->
+          <div class="col-md-4">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="cpf"
+                   name="cpf" placeholder="000.000.000-00"
+                   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" maxlength="14"
+                   autocomplete="off">
+            <div class="form-text">formato: 000.000.000-00</div>
+            <div class="invalid-feedback">informe o CPF no formato 000.000.000-00.</div>
+          </div>
+
+          <!-- Data de nascimento (date) -->
+          <div class="col-md-4">
+            <label for="dataNascimento" class="form-label">Data de nascimento</label>
+            <input type="date" class="form-control" id="dataNascimento"
+                   name="dataNascimento" autocomplete="bday">
+          </div>
+
+          <!-- Sexo (radio buttons) -->
+          <div class="col-md-8">
+            <label class="form-label d-block">Sexo</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="sexoM"
+                     name="sexo" value="masculino">
+              <label class="form-check-label" for="sexoM">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="sexoF"
+                     name="sexo" value="feminino">
+              <label class="form-check-label" for="sexoF">Feminino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="sexoNI"
+                     name="sexo" value="nao_informado">
+              <label class="form-check-label" for="sexoNI">Prefiro não informar</label>
+            </div>
+          </div>
+
+          <!-- Endereço (text) -->
+          <div class="col-md-8">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="endereco"
+                   name="endereco" placeholder="Rua, número"
+                   autocomplete="street-address">
+          </div>
+
+          <!-- Complemento (text) -->
+          <div class="col-md-4">
+            <label for="complemento" class="form-label">Complemento</label>
+            <input type="text" class="form-control" id="complemento"
+                   name="complemento" placeholder="Apto, bloco, etc.">
+          </div>
+
+          <!-- Cidade (text) -->
+          <div class="col-md-6">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="cidade"
+                   name="cidade" placeholder="Sua cidade"
+                   autocomplete="address-level2">
+          </div>
+
+          <!-- CEP (text com pattern) -->
+          <div class="col-md-3">
+            <label for="cep" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="cep"
+                   name="cep" placeholder="00000-000"
+                   pattern="\d{5}-\d{3}" maxlength="9"
+                   autocomplete="postal-code">
+            <div class="invalid-feedback">informe o CEP no formato 00000-000.</div>
+          </div>
+
+          <!-- Telefone (tel, required) -->
+          <div class="col-md-3">
+            <label for="telefone" class="form-label">
+              Telefone <span class="obrigatorio text-danger">*</span>
+            </label>
+            <input type="tel" class="form-control" id="telefone"
+                   name="telefone" placeholder="(11) 99999-9999"
+                   required autocomplete="tel">
+            <div class="invalid-feedback">por favor, informe o telefone.</div>
+          </div>
+
+          <!-- E-mail (email, required) -->
+          <div class="col-md-6">
+            <label for="emailTutor" class="form-label">
+              E-mail <span class="obrigatorio text-danger">*</span>
+            </label>
+            <input type="email" class="form-control" id="emailTutor"
+                   name="emailTutor" placeholder="seu@email.com"
+                   required autocomplete="email">
+            <div class="invalid-feedback">por favor, informe um e-mail válido.</div>
+          </div>
+
+        </div><!-- /.row -->
+      </div><!-- /.form-section tutor -->
+
+      <!-- ======================================================
+           SEÇÃO 2: DADOS DO PET
+           ====================================================== -->
+      <div class="form-section">
+        <h2>Dados do Pet</h2>
+
+        <div class="row g-3">
+
+          <!-- Nome do pet (text, required) -->
+          <div class="col-md-6">
+            <label for="nomePet" class="form-label">
+              Nome do pet <span class="obrigatorio text-danger">*</span>
+            </label>
+            <input type="text" class="form-control" id="nomePet"
+                   name="nomePet" placeholder="Como você chama seu pet"
+                   required>
+            <div class="invalid-feedback">por favor, informe o nome do pet.</div>
+          </div>
+
+          <!-- Espécie (select, required) -->
+          <div class="col-md-6">
+            <label for="especiePet" class="form-label">
+              Espécie <span class="obrigatorio text-danger">*</span>
+            </label>
+            <select class="form-select" id="especiePet" name="especiePet" required>
+              <option value="" disabled selected>Selecione a espécie</option>
+              <option value="cao">Cão</option>
+              <option value="gato">Gato</option>
+              <option value="peixe">Peixe</option>
+              <option value="outro">Outro</option>
+            </select>
+            <div class="invalid-feedback">por favor, selecione a espécie.</div>
+          </div>
+
+          <!-- Raça (text) -->
+          <div class="col-md-6">
+            <label for="racaPet" class="form-label">Raça</label>
+            <input type="text" class="form-control" id="racaPet"
+                   name="racaPet" placeholder="Raça do pet (ou SRD)">
+          </div>
+
+          <!-- Idade (number, min/max) -->
+          <div class="col-md-3">
+            <label for="idadePet" class="form-label">Idade (anos)</label>
+            <input type="number" class="form-control" id="idadePet"
+                   name="idadePet" min="0" max="30" placeholder="0">
+            <div class="invalid-feedback">informe uma idade entre 0 e 30 anos.</div>
+          </div>
+
+          <!-- Porte (radio buttons) -->
+          <div class="col-md-3">
+            <label class="form-label d-block">Porte</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="portePequeno"
+                     name="porte" value="pequeno">
+              <label class="form-check-label" for="portePequeno">Pequeno</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="porteMedio"
+                     name="porte" value="medio">
+              <label class="form-check-label" for="porteMedio">Médio</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="porteGrande"
+                     name="porte" value="grande">
+              <label class="form-check-label" for="porteGrande">Grande</label>
+            </div>
+          </div>
+
+          <!-- Observações especiais (textarea) -->
+          <div class="col-12">
+            <label for="observacoesPet" class="form-label">Observações especiais</label>
+            <textarea class="form-control" id="observacoesPet" name="observacoesPet"
+                      rows="3"
+                      placeholder="Alergias, comportamentos, necessidades especiais, etc."></textarea>
+          </div>
+
+        </div><!-- /.row -->
+      </div><!-- /.form-section pet -->
+
+      <!-- Botão de envio -->
+      <div class="d-grid d-md-flex justify-content-md-end mb-4">
+        <button type="submit" class="btn btn-petshop btn-lg">
+          Cadastrar tutor e pet
+        </button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <footer class="site-footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <address>
+            <strong>4 Patinhas Petshop</strong><br>
+            Rua dos Animais, 42, São Paulo — SP<br>
+            Tel: (11) 99999-0000<br>
+            E-mail: <a href="mailto:contato@4patinhas.com.br">contato@4patinhas.com.br</a>
+          </address>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p>Desenvolvido por Cíntia Cabreira</p>
+          <p>análise e Desenvolvimento de Sistemas na PUC</p>
+          <p class="mb-0">© 2024 4 Patinhas Petshop. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

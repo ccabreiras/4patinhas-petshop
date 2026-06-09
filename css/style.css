@@ -1,0 +1,189 @@
+/* ============================================================
+   4 Patinhas Petshop — css/style.css
+   Estilos personalizados — Fase 2
+   Complementares ao Bootstrap 5.3
+   ============================================================ */
+
+/* --- Variáveis de cor da marca ----------------------------*/
+:root {
+  --cor-primaria:   #2e7d32;  /* verde escuro — cor principal da marca  */
+  --cor-secundaria: #66bb6a;  /* verde claro  — bordas e destaques leves */
+  --cor-destaque:   #ff8f00;  /* âmbar        — preços e CTAs            */
+  --cor-fundo:      #f9f5f0;  /* branco quente — fundo geral da página   */
+  --cor-texto:      #1a1a1a;  /* quase preto  — texto principal          */
+  --cor-footer:     #1b5e20;  /* verde profundo — rodapé e navbar        */
+}
+
+/* --- Acessibilidade: skip link ----------------------------*/
+/* exibe o link apenas quando recebe foco do teclado (WCAG 2.1) */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 0;
+  background: var(--cor-primaria);
+  color: #ffffff;
+  padding: 10px 18px;
+  z-index: 9999;
+  font-weight: bold;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Corpo ------------------------------------------------*/
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* --- Cabeçalho --------------------------------------------*/
+.site-header {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 1.25rem 0;
+  text-align: center;
+}
+.site-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+.site-header p {
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+/* Relógio — atualizado a cada segundo pelo JavaScript */
+#relogio {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-top: 0.3rem;
+  letter-spacing: 0.03em;
+}
+
+/* --- Navegação Bootstrap ----------------------------------*/
+/* sobrepõe a cor padrão do Bootstrap com a cor do rodapé do petshop */
+.navbar {
+  background-color: var(--cor-footer) !important;
+}
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: color 0.2s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link[aria-current="page"] {
+  color: var(--cor-destaque) !important;
+}
+/* ícone do menu hamburguer: inverte para ficar visível no fundo escuro */
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* --- Cards de produtos ------------------------------------*/
+.card-produto {
+  border: 1px solid var(--cor-secundaria);
+  border-radius: 8px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+.card-produto .card-title {
+  color: var(--cor-primaria);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.card-produto .preco {
+  color: var(--cor-destaque);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* --- Cards de serviços ------------------------------------*/
+.card-servico {
+  background-color: #ffffff;
+  border-left: 5px solid var(--cor-primaria);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+.card-servico h3 {
+  color: var(--cor-primaria);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card-servico .preco-servico {
+  color: var(--cor-destaque);
+  font-weight: 600;
+}
+
+/* --- Carrossel — legendas com sombra de texto -------------*/
+.carousel-caption h5 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.85);
+}
+.carousel-caption p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+}
+
+/* --- Seções de formulário ---------------------------------*/
+.form-section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+/* título de seção do formulário */
+.form-section h2 {
+  color: var(--cor-primaria);
+  border-bottom: 2px solid var(--cor-secundaria);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+/* asterisco de campo obrigatório */
+.obrigatorio {
+  color: #c62828;
+  margin-left: 2px;
+}
+
+/* --- Botão principal da marca -----------------------------*/
+.btn-petshop {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 0.55rem 2rem;
+  font-weight: 600;
+}
+.btn-petshop:hover,
+.btn-petshop:focus {
+  background-color: var(--cor-footer);
+  border-color: var(--cor-footer);
+  color: #ffffff;
+}
+
+/* --- Rodapé -----------------------------------------------*/
+.site-footer {
+  background-color: var(--cor-footer);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 0;
+}
+.site-footer address {
+  font-style: normal;
+  line-height: 1.9;
+}
+.site-footer a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

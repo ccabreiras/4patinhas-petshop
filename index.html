@@ -3,70 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4 Patinhas Petshop: home</title>
+  <!-- Título da página -->
+  <title>Início — 4 Patinhas Petshop</title>
+  <!-- Bootstrap 5.3 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados da Fase 2 -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>4 Patinhas Petshop</h1>
-    <p>Cuidando do seu pet com amor, desde 2024</p>
-    <nav>
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="caes.html">Cães</a></li>
-        <li><a href="gatos.html">Gatos</a></li>
-        <li><a href="peixes.html">Peixes</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="ajuda.html">Ajuda</a></li>
-      </ul>
-    </nav>
+  <!-- Link de acessibilidade: permite pular a navegação para o conteúdo principal (WCAG 2.1) -->
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho com relógio em tempo real (atualizado pelo JavaScript) -->
+  <header class="site-header">
+    <div class="container">
+      <h1>🐾 4 Patinhas Petshop</h1>
+      <p>Cuidando do seu pet com amor, desde 2024</p>
+      <!-- #relogio é atualizado pela função iniciarRelogio() em js/main.js -->
+      <p id="relogio" aria-live="polite" aria-label="Data e hora atuais"></p>
+    </div>
   </header>
 
-  <!-- MAIN -->
-  <main>
-    <h2>Bem-vindo ao 4 Patinhas Petshop</h2>
-    <p>
-      O 4 Patinhas Petshop é o lugar certo para cuidar do seu pet com carinho e qualidade.
-      Temos produtos selecionados para cães, gatos e peixes, além de serviços especializados
-      para manter seu companheiro saudável e feliz.
-      Venha nos visitar ou entre em contato. Estamos aqui para ajudar!
-    </p>
+  <!-- Barra de navegação Bootstrap responsiva (colapsa em telas pequenas) -->
+  <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu"
+              aria-expanded="false" aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <!-- aria-current="page" indica a página ativa para leitores de tela -->
+          <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="caes.html">Cães</a></li>
+          <li class="nav-item"><a class="nav-link" href="gatos.html">Gatos</a></li>
+          <li class="nav-item"><a class="nav-link" href="peixes.html">Peixes</a></li>
+          <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+          <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link" href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <h3>Nossas Categorias</h3>
-    <ul>
-      <li><a href="caes.html">Cães</a></li>
-      <li><a href="gatos.html">Gatos</a></li>
-      <li><a href="peixes.html">Peixes</a></li>
-    </ul>
+  <!-- Conteúdo principal -->
+  <main id="conteudo-principal" class="container my-4">
 
-    <h3>Nossos Serviços</h3>
-    <ul>
-      <li>Consulta Veterinária;</li>
-      <li>Banho e Tosa;</li>
-      <li>Hotelzinho para Pets.</li>
-    </ul>
-    <p><a href="servicos.html">Ver todos os serviços</a></p>
+    <!-- ============================================================
+         CARROSSEL BOOTSTRAP — exibe as 3 categorias do petshop
+         ============================================================ -->
+    <div id="carouselPetshop" class="carousel slide mb-5" data-bs-ride="carousel"
+         aria-label="Categorias do petshop">
+
+      <!-- Indicadores de slide (pontos abaixo do carrossel) -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselPetshop" data-bs-slide-to="0"
+                class="active" aria-current="true" aria-label="Slide 1: Cães"></button>
+        <button type="button" data-bs-target="#carouselPetshop" data-bs-slide-to="1"
+                aria-label="Slide 2: Gatos"></button>
+        <button type="button" data-bs-target="#carouselPetshop" data-bs-slide-to="2"
+                aria-label="Slide 3: Peixes"></button>
+      </div>
+
+      <div class="carousel-inner rounded">
+
+        <!-- Slide 1: Cães -->
+        <div class="carousel-item active" role="group" aria-label="Slide 1 de 3: Cães">
+          <img src="https://placehold.co/1200x400/2e7d32/ffffff?text=Caes"
+               class="d-block w-100"
+               alt="Seção de produtos para cães: rações, coleiras, acessórios e muito mais">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Cães</h5>
+            <p>produtos premium para o melhor amigo do homem.</p>
+            <a href="caes.html" class="btn btn-light btn-sm">Ver produtos</a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Gatos -->
+        <div class="carousel-item" role="group" aria-label="Slide 2 de 3: Gatos">
+          <img src="https://placehold.co/1200x400/1565c0/ffffff?text=Gatos"
+               class="d-block w-100"
+               alt="Seção de produtos para gatos: rações, arranhadores e acessórios">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Gatos</h5>
+            <p>produtos selecionados para o bem-estar do seu felino.</p>
+            <a href="gatos.html" class="btn btn-light btn-sm">Ver produtos</a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Peixes -->
+        <div class="carousel-item" role="group" aria-label="Slide 3 de 3: Peixes">
+          <img src="https://placehold.co/1200x400/0097a7/ffffff?text=Peixes"
+               class="d-block w-100"
+               alt="Seção de produtos para peixes: rações, aquários e acessórios">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Peixes</h5>
+            <p>tudo para montar o aquário dos seus sonhos.</p>
+            <a href="peixes.html" class="btn btn-light btn-sm">Ver produtos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles de navegação do carrossel -->
+      <button class="carousel-control-prev" type="button"
+              data-bs-target="#carouselPetshop" data-bs-slide="prev"
+              aria-label="Slide anterior">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button"
+              data-bs-target="#carouselPetshop" data-bs-slide="next"
+              aria-label="Próximo slide">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+
+    <!-- Boas-vindas -->
+    <section class="mb-5">
+      <h2>Bem-vindo ao 4 Patinhas Petshop</h2>
+      <p>
+        Somos um petshop dedicado ao bem-estar e à felicidade dos seus animais de estimação.
+        Aqui você encontra produtos de qualidade e serviços especializados para cães, gatos e peixes.
+      </p>
+    </section>
+
+    <!-- Cards de categorias -->
+    <section class="mb-5">
+      <h2>Nossas categorias</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 text-center border-success">
+            <div class="card-body">
+              <h3 class="card-title fs-4">🐶 Cães</h3>
+              <p class="card-text">rações, coleiras, brinquedos e acessórios para cães de todos os portes.</p>
+              <a href="caes.html" class="btn btn-petshop">Ver produtos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 text-center border-primary">
+            <div class="card-body">
+              <h3 class="card-title fs-4">🐱 Gatos</h3>
+              <p class="card-text">rações, arranhadores, casinhas e tudo que o seu gato precisa.</p>
+              <a href="gatos.html" class="btn btn-petshop">Ver produtos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 text-center border-info">
+            <div class="card-body">
+              <h3 class="card-title fs-4">🐠 Peixes</h3>
+              <p class="card-text">rações, aquários, filtros e acessórios para o seu aquário.</p>
+              <a href="peixes.html" class="btn btn-petshop">Ver produtos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços em destaque -->
+    <section class="mb-4">
+      <h2>Nossos serviços</h2>
+      <p>confira os serviços disponíveis no 4 Patinhas Petshop:</p>
+      <ul>
+        <li>consulta veterinária;</li>
+        <li>banho e tosa (com opção de tele-busca);</li>
+        <li>hotelzinho para pets.</li>
+      </ul>
+      <a href="servicos.html" class="btn btn-petshop">Ver todos os serviços</a>
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2024 4 Patinhas Petshop. Todos os direitos reservados.</p>
-    <p>Desenvolvido por Cíntia Cabreira, estudante de Análise e Desenvolvimento de Sistemas na PUC.</p>
-    <address>
-      contato@4patinhas.com.br | Tel: (11) 99999-0000 | Rua dos Animais, 42, São Paulo, SP
-    </address>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="caes.html">Cães</a></li>
-        <li><a href="gatos.html">Gatos</a></li>
-        <li><a href="peixes.html">Peixes</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="ajuda.html">Ajuda</a></li>
-      </ul>
-    </nav>
+  <!-- Rodapé -->
+  <footer class="site-footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <address>
+            <strong>4 Patinhas Petshop</strong><br>
+            Rua dos Animais, 42, São Paulo — SP<br>
+            Tel: (11) 99999-0000<br>
+            E-mail: <a href="mailto:contato@4patinhas.com.br">contato@4patinhas.com.br</a>
+          </address>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p>Desenvolvido por Cíntia Cabreira</p>
+          <p>análise e Desenvolvimento de Sistemas na PUC</p>
+          <p class="mb-0">© 2024 4 Patinhas Petshop. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (inclui Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript personalizado da Fase 2 -->
+  <script src="js/main.js"></script>
 
 </body>
 </html>
